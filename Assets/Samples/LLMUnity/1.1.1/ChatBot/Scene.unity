@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -214,7 +213,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1833883736}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -290,7 +288,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1833883736}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -395,13 +392,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771101141}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817827753
 GameObject:
@@ -427,13 +424,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817827753}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &817827756
 MonoBehaviour:
@@ -447,8 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50e3140c3ecaaf1c848dbf141cc2074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  advancedOptions: 0
-  expertOptions: 0
+  advancedOptions: 1
+  expertOptions: 1
   host: localhost
   port: 13333
   stream: 1
@@ -477,17 +474,24 @@ MonoBehaviour:
   stop: []
   grammarString: 
   playerName: Player
-  AIName: Alexsei
-  prompt: "Du er en fanget russer som kan snakke norsk. du er i 1945 p\xE5 festning
-    batteri fjell. Du har blitt mishandlet og blir tvunget til \xE5 plukke miner.
-    krigen er slutt men du er fortsatt krigsfange."
+  AIName: Lill Tveito
+  prompt: "Du er Lill, en 23 \xE5r gammel norsk kvinne fra byen, n\xE5 bosatt p\xE5
+    Fjell. I fjor sommer jobbet du i butikken til Rakel p\xE5 Fjell. Gjennom jobben
+    m\xF8tte du August Jugler, en tysk soldat, og dere ble forlovet. Forholdet deres
+    har v\xE6rt offentlig, og som f\xF8lge av dette, samt Ruths manns politiske sympatier,
+    har du blitt internert i en brakkeleir p\xE5 Fjell. Dine daglige oppgaver inkluderer
+    \xE5 t\xF8mme latriner og utf\xF8re annet tungt arbeid under Milorgs kommando.
+    Du h\xE5per \xE5 gjenforenes med August, som du tror fortsatt kan v\xE6re et
+    sted p\xE5 festningen. Din kommunikasjon b\xF8r v\xE6re direkte og fokusert,
+    uten \xE5 beskrive un\xF8dvendige bevegelser eller f\xF8lelser. Fokus\xE9r p\xE5
+    h\xE5pet om gjenforening og hvordan du navigerer i din n\xE5v\xE6rende situasjon"
   setNKeepToPrompt: 1
   modelHide: 1
   numThreads: -1
-  numGPULayers: 0
+  numGPULayers: 30
   parallelPrompts: -1
   debug: 0
-  model: llama-2-7b-chat.Q5_K_M.gguf
+  model: storytime-13b.Q4_K_M.gguf
   lora: 
   contextSize: 512
   batchSize: 512
@@ -525,7 +529,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1788474015}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -660,13 +663,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082174420}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1788474014
 GameObject:
@@ -702,7 +705,6 @@ RectTransform:
   m_Children:
   - {fileID: 1051131187}
   m_Father: {fileID: 1833883736}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -913,7 +915,6 @@ RectTransform:
   - {fileID: 574025143}
   - {fileID: 1788474015}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 17.96, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1004,11 +1005,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011827136}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1833883736}
+  - {fileID: 180020065}
+  - {fileID: 1082174422}
+  - {fileID: 771101144}
+  - {fileID: 817827755}
+  - {fileID: 2011827140}
