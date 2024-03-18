@@ -488,13 +488,13 @@ MonoBehaviour:
   setNKeepToPrompt: 1
   modelHide: 1
   numThreads: -1
-  numGPULayers: 30
+  numGPULayers: 40
   parallelPrompts: -1
-  debug: 0
+  debug: 1
   model: storytime-13b.Q4_K_M.gguf
   lora: 
-  contextSize: 512
-  batchSize: 512
+  contextSize: 128
+  batchSize: 128
   SelectedOption: 0
   modelProgress: 1
   modelCopyProgress: 1
