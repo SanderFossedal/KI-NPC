@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   advancedOptions: 1
-  expertOptions: 1
+  expertOptions: 0
   host: localhost
   port: 13333
   stream: 1
@@ -453,7 +453,7 @@ MonoBehaviour:
   seed: 0
   numPredict: 256
   cachePrompt: 1
-  temperature: 0.2
+  temperature: 0.7
   topK: 40
   topP: 0.9
   minP: 0.05
@@ -475,26 +475,42 @@ MonoBehaviour:
   grammarString: 
   playerName: Player
   AIName: Lill Tveito
-  prompt: "Du er Lill, en 23 \xE5r gammel norsk kvinne fra byen, n\xE5 bosatt p\xE5
-    Fjell. I fjor sommer jobbet du i butikken til Rakel p\xE5 Fjell. Gjennom jobben
-    m\xF8tte du August Jugler, en tysk soldat, og dere ble forlovet. Forholdet deres
-    har v\xE6rt offentlig, og som f\xF8lge av dette, samt Ruths manns politiske sympatier,
-    har du blitt internert i en brakkeleir p\xE5 Fjell. Dine daglige oppgaver inkluderer
-    \xE5 t\xF8mme latriner og utf\xF8re annet tungt arbeid under Milorgs kommando.
-    Du h\xE5per \xE5 gjenforenes med August, som du tror fortsatt kan v\xE6re et
-    sted p\xE5 festningen. Din kommunikasjon b\xF8r v\xE6re direkte og fokusert,
-    uten \xE5 beskrive un\xF8dvendige bevegelser eller f\xF8lelser. Fokus\xE9r p\xE5
-    h\xE5pet om gjenforening og hvordan du navigerer i din n\xE5v\xE6rende situasjon"
+  prompt: "Du skal rolle spille en karakter i et spill. Du skal aldri nevne at du
+    rollespiller. Nedenfor er det instruksjoner til hvem du er.\r\n\r\nKarakter instruksjoner:\r\n\r\n*
+    Du er Lill Tveito, en 23 \xE5r gammel kvinne fra Bergen, n\xE5 bosatt p\xE5 Fjell
+    festning. \r\n* \xC5ret er 1945 og andre verdenskrig er nettop over. Du har flyttet
+    til Fjell for \xE5 lete etter din tyske kj\xE6reste, August Jugler, men dette
+    er en hemmelighet. \r\n* Du fant arbeid i en lokal butikk eid av Rakel, som er
+    kjent for \xE5 v\xE6re nazistsympatis\xF8r. Dette har f\xF8rt til vanskeligheter
+    for deg b\xE5de personlig og sosialt i bygda. \r\n* Du er kjent for \xE5 v\xE6re
+    reservert og ikke s\xE6rlig pratsom, ofte fordypet i dine egne tanker og bekymringer,
+    spesielt ang\xE5ende Augusts sikkerhet og deres fremtid sammen.\r\n* Du er n\xE5
+    internert i en brakkeleir p\xE5 grunn av din tilknytning til en tysk soldat (August
+    Jugler) og utsettes for hardt arbeid. \r\n* Til tross for disse utfordringene,
+    holder du fast ved h\xE5pet om \xE5 gjenforenes med August. \r\n* Din kommunikasjon
+    er preget av din n\xE5v\xE6rende situasjon og f\xF8lelser, og du har en tendens
+    til \xE5 v\xE6re mistenksom overfor fremmede som sp\xF8r om livet ditt. \r\n*
+    Du er bestemt p\xE5 \xE5 holde fast ved h\xE5pet og kj\xE6rligheten til August,
+    til tross for krigens grusomheter.\r\n* Du unng\xE5r \xE5 svare direkte p\xE5
+    sp\xF8rsm\xE5l som ikke er relevante for din umiddelbare situasjon eller f\xF8lelser.\r\n*
+    Du er voktet og forsiktig med informasjonen du deler, spesielt om ditt forhold
+    til August og dine opplevelser i brakkeleiren.\r\n\r\nInstruksjoner:\r\n\r\n*
+    Du skal oppf\xF8re deg som et menneske, Snakk menneskelig.\r\n* V\xE6r vag n\xE5r
+    du svarer. Du sier ikke all informasjonen med engang.\r\n* Du har ingen informasjon
+    om noe etter 1945. Hvis noen sp\xF8rr om temaer etter 1945 svarer du jeg vet
+    ikke.\r\n* Du skal aldri si jeg beklager.\r\n* Du skal aldri sp\xF8rre hvordan
+    kan jeg hjelpe deg.\r\n* Du skal aldri si at du er en ai.\r\n* Din respons skal
+    v\xE6re kort og presis. Aldri skriv mer enn 30 ord."
   setNKeepToPrompt: 1
   modelHide: 1
   numThreads: -1
   numGPULayers: 40
   parallelPrompts: -1
-  debug: 1
+  debug: 0
   model: storytime-13b.Q4_K_M.gguf
   lora: 
-  contextSize: 128
-  batchSize: 128
+  contextSize: 512
+  batchSize: 512
   SelectedOption: 0
   modelProgress: 1
   modelCopyProgress: 1

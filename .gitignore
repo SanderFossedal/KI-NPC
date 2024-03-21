@@ -67,3 +67,5 @@ crashlytics-build.properties
 Assets/StreamingAssets/llama-2-7b-chat.Q5_K_M.gguf.meta
 
 Assets/StreamingAssets/storytime-13b.Q4_K_M.gguf.meta
+
+Assets/StreamingAssets/mpt-7b-chat-newbpe-q4_0.gguf.meta
