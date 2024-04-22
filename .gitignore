@@ -69,3 +69,7 @@ Assets/StreamingAssets/llama-2-7b-chat.Q5_K_M.gguf.meta
 Assets/StreamingAssets/storytime-13b.Q4_K_M.gguf.meta
 
 Assets/StreamingAssets/mpt-7b-chat-newbpe-q4_0.gguf.meta
+
+Assets/StreamingAssets/mistral-7b-v0.1.Q5_K_S.gguf.meta
+
+Assets/StreamingAssets/normistral-7b-warm-Q8_0.gguf.meta

@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using OpenAI;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class CustomGPTScript : MonoBehaviour
 {
@@ -39,7 +36,7 @@ public class CustomGPTScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
         // Load the prompt from a text file in Resources
         TextAsset promptTextAsset = Resources.Load<TextAsset>("System_promt");
 
@@ -57,6 +54,16 @@ public class CustomGPTScript : MonoBehaviour
 
     public async void SendGPTReply(string newText)
     {
+        // Trim the input to remove leading and trailing whitespaces
+        string trimmedInput = newText.Trim();
+
+        // Check if the trimmed input is empty and return if it is
+        if (string.IsNullOrEmpty(trimmedInput))
+        {
+            Debug.LogWarning("Attempted to send an empty message. Operation aborted.");
+            return;
+        }
+
         Debug.Log("Sending request to OpenAI API...");
 
         ChatMessage newMessage = new ChatMessage();
@@ -97,7 +104,7 @@ public class CustomGPTScript : MonoBehaviour
             Debug.LogWarning("No text was generated from this prompt.");
         }
 
-       
+
     }
 
     //Testing relatert

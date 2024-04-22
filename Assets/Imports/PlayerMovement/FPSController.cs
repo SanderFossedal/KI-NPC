@@ -24,6 +24,8 @@ public class FPSController : MonoBehaviour
 
     private float rotationX = 0;
 
+    public bool canMove = true;
+
     void Awake()
     {
         CacheComponents();
@@ -36,7 +38,7 @@ public class FPSController : MonoBehaviour
         HandleMovementInput();
         HandleMouseLook();
 
-        HandleResetCheck();
+        //HandleResetCheck();
 
         ApplyFinalMovements();
     }
@@ -49,6 +51,12 @@ public class FPSController : MonoBehaviour
 
     private void HandleMovementInput()
     {
+        if (!canMove)
+        {
+            moveDirection = Vector3.zero; // Stopper all bevegelse
+            return;
+        }
+
         forward = transform.TransformDirection(Vector3.forward);
         right = transform.TransformDirection(Vector3.right);
 
@@ -84,9 +92,9 @@ public class FPSController : MonoBehaviour
         Cursor.visible = lockMode == CursorLockMode.Locked ? false : true;
     }
 
-    public void HandleResetCheck()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
+    //public void HandleResetCheck()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    //}
 }

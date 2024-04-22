@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Samples/OpenAI Unity/0.2.0/ChatGPT/ChatGPT Freeroam.unity
+    guid: bb7e4b8ab009efd4ab883110aa97bc86
   m_configObjects: {}
