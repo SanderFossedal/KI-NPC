@@ -1,4 +1,6 @@
+using LeastSquares.Overtone;
 using LLMUnity;
+using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -12,6 +14,7 @@ namespace LLMUnitySamples
     {
         public TextMeshPro chatOutput;
         public LLMClient llm;
+        public StartTTS tts;
 
         private bool warmUpDone = false;
 
@@ -41,8 +44,22 @@ namespace LLMUnitySamples
 
         public void UpdateChatOutput(string text, string sender)
         {
-            chatOutput.text = $"{text}";
-            Debug.Log($"{sender}: {text}");
+            var sb = new StringBuilder();
+            foreach (char c in text)
+            {
+                if (c != '#')
+                    sb.Append(c);
+            }
+            sb.ToString();
+
+
+            // Append new message to the chat output.
+            chatOutput.text = $"{sb}";
+            string finalText = sb.ToString();
+            if (tts != null)
+                tts.ReceiveText(finalText); // Send the text to the TTS component
+
+            Debug.Log($"{sender}:default text: {text}");
         }
 
         public void WarmUpCallback()

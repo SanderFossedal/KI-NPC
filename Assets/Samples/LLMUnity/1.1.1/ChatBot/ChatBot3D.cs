@@ -1,4 +1,5 @@
 using LLMUnity;
+using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -43,10 +44,25 @@ namespace LLMUnitySamples
 
         public void UpdateChatOutput(string text, string sender)
         {
-            // Append new message to the chat output.
-            chatOutput.text = $"{text}";
+            // Fjerner alle # tegn
+            //string cleanedText = text.Replace("#", "");
 
-            Debug.Log($"{sender}: {text}");
+            // Fjerner unødvendige mellomrom (leading, trailing, og doble mellomrom i teksten)
+            //cleanedText = System.Text.RegularExpressions.Regex.Replace(cleanedText, @"\s+", " ").Trim();
+
+            var sb = new StringBuilder();
+            foreach (char c in text)
+            {
+                if (!char.IsPunctuation(c) && c != '#')
+                    sb.Append(c);
+            }
+            sb.ToString();
+
+
+            // Append new message to the chat output.
+            chatOutput.text = $"{sb}";
+
+            Debug.Log($"{sender}:default text: {text}");
 
             AllowInput();
         }

@@ -536,6 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatOutput: {fileID: 7134917022160011938}
   llm: {fileID: 817827756}
+  tts: {fileID: 1725719794}
 --- !u!4 &193633325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8705d83795d0aae4bb5c9587fc905160, type: 3}
@@ -1139,12 +1140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc03a4c19604ea394e364f8fc632928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLengthSec: 60
+  maxLengthSec: 10
   loop: 0
   frequency: 16000
   chunksLengthSec: 0.5
   echo: 0
-  useVad: 1
+  useVad: 0
   vadUpdateRateSec: 0.1
   vadContextSec: 30
   vadLastSec: 1.25
@@ -1152,7 +1153,7 @@ MonoBehaviour:
   vadFreqThd: 100
   vadIndicatorImage: {fileID: 0}
   vadStop: 0
-  dropVadPart: 1
+  dropVadPart: 0
   vadStopTime: 3
   microphoneDropdown: {fileID: 0}
   microphoneDefaultLabel: Default microphone
@@ -1763,12 +1764,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logLevel: 1
-  modelPath: Whisper/ggml-base.bin
+  modelPath: Whisper/ggml-large-v3.bin
   isModelPathInStreamingAssets: 1
   initOnAwake: 1
   language: no
   translateToEnglish: 0
-  strategy: 1
+  strategy: 0
   noContext: 1
   singleSegment: 0
   enableTokens: 0
@@ -2239,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   advancedOptions: 1
-  expertOptions: 0
+  expertOptions: 1
   host: localhost
   port: 13333
   stream: 0
@@ -2247,13 +2248,13 @@ MonoBehaviour:
   seed: 0
   numPredict: 256
   cachePrompt: 1
-  temperature: 0.65
+  temperature: 0.4
   topK: 40
   topP: 0.9
   minP: 0.05
   repeatPenalty: 1.1
   presencePenalty: 0
-  frequencyPenalty: 0
+  frequencyPenalty: 0.103
   tfsZ: 1
   typicalP: 1
   repeatLastN: 64
@@ -2268,27 +2269,26 @@ MonoBehaviour:
   stop: []
   grammarString: 
   playerName: Player
-  AIName: "Aleks\xE9j Nazarenko "
-  prompt: "DU ER VELDIG SJENERT. Du er Aleks\xE9j Nazarenko, en krigsfange fra Odessa
-    i Ukraina. Du befinner deg p\xE5 Fjell festning som ligger i Fjell kommune utenfor
-    Bergen. Du befinner deg i \xE5ret 1945 m\xE5neden etter andre verdenskrig tok
-    slutt. Svar p\xE5 sp\xF8rsm\xE5l ved \xE5 bruke fakta du har f\xE5tt under. Du
-    skal alltid svare p\xE5 Norsk og skal begrense svar til maks 45 ord. Du skal
-    aldri bruke tags eller overskrifter i svarene dine. \r\n\r\n#Fakta\r\nNavn: Aleks\xE9j
-    Nazarenko\r\nAlder: 39 \xE5r\r\nOpprinnelse: Odessa, Ukraina\r\nStatus: Krigsfange\r\nDu
-    befinner deg p\xE5 Fjell Festning utenfor Bergen.\r\nDu har v\xE6rt p\xE5 festningen
-    flere ganger under krigen.\r\nDu frykter for \xE5 bli sendt til Gulag om du returnerer
-    hjem.\r\nDu er dyktig til \xE5 lage ting i tre og smelte metall til ringer og
-    andre sm\xE5 ting.\r\nDu er p\xE5 festningen for \xE5 f\xE5 hjelp til \xE5 pleie
-    et betent s\xE5r.\r\nDu syntes Adolf Hitler er en brutal douchbag. \r\nDu er
-    mot andre verdenskrig. \r\nMilorg-soldater sendte deg opp p\xE5 festningen.\r\nDu
-    venter p\xE5 transport tilbake til leiren, men nyter en sjelden r\xF8yk gitt
-    av en engelskmann.\r\nP\xE5 sykestua har du sett tyske soldater med mineskader,
-    noe du synes er merkelig.\r\nDa du kom til festningen, s\xE5 du et lik av en
-    tysk soldat bli fjernet og transportert bort.\r\nIkke diskuter hendelser etter
-    1945, svar p\xE5 slike sp\xF8rsm\xE5l med \"Jeg vet ikke hva du snakker om, kan
-    vi snakke om noe annet?\"\r\n\n#Beskrivelse av rommet du er i\nVed gulv, 4 bokser
-    til h\xF8yre, et bilde bak deg, 4 vinduer, en d\xF8r"
+  AIName: Erik Halvorsen
+  prompt: "\r\nDu er Erik Halvorsen, en sj\xF8mann fra Lillesand i Norge. Du er n\xE5
+    i London i \xE5ret 1925. Du arbeider p\xE5 et handelsskip som frakter varer mellom
+    Norge og England. Bruk faktaene nedenfor til \xE5 svare p\xE5 sp\xF8rsm\xE5l.
+    Du skal alltid svare p\xE5 Norsk og skal begrense svar til maks 45 ord. Du skal
+    aldri bruke tags eller overskrifter i svarene dine.\r\n\r\n#Fakta\r\nNavn: Erik
+    Halvorsen\r\nAlder: 33 \xE5r\r\nOpprinnelse: Lillesand, Norge\r\nYrke: Sj\xF8mann\r\nDu
+    er for tiden i London.\r\nDu jobber p\xE5 et handelsskip.\r\nDu er interessert
+    i jazzmusikk og spiller saksofon p\xE5 fritiden.\r\nDu savner Norge og familien,
+    spesielt under lange reiser.\r\nDu er skeptisk til den raskt voksende industrialiseringen
+    og dens effekter p\xE5 samfunnet.\r\nDu har nylig kj\xF8pt en gammel bil, en
+    Ford Model T, som du h\xE5per \xE5 reparere.\r\nDu er bekymret for den \xF8kende
+    spenningen i Europa og diskuterer ofte politikk med kolleger.\r\nIkke diskuter
+    hendelser etter 1925, svar p\xE5 slike sp\xF8rsm\xE5l med \"Jeg vet ikke hva
+    du snakker om, kan vi snakke om noe annet?\"\r\n\r\nDu er i et rom med:\r\nGul
+    teppe,\r\nen gammel radio til h\xF8yre for deg, som ofte brukes til \xE5 lytte
+    til jazz.\r\net bilde av familien din bak deg.\r\nto vinduer til venstre for
+    deg.\r\nen brun d\xF8r bak deg.\r\nen veggklokke bak deg som viser 16.30.\r\nEt
+    skrivebord foran deg med skipsloggboken, en kaffekopp, og noen verkt\xF8y for
+    bilreparasjoner."
   setNKeepToPrompt: 1
   modelHide: 1
   numThreads: -1
@@ -5240,7 +5240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554871168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4880d7b1daf2a4c4db262275d96e8c19, type: 3}
   m_Name: 
@@ -5449,6 +5449,192 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56bf0a1c4110f674a8b7164a05f4bc39, type: 3}
   m_PrefabInstance: {fileID: 1271349121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1725719792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1725719798}
+  - component: {fileID: 1725719797}
+  - component: {fileID: 1725719796}
+  - component: {fileID: 1725719795}
+  - component: {fileID: 1725719794}
+  - component: {fileID: 1725719793}
+  m_Layer: 0
+  m_Name: TTS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1725719793
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1725719794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd935edff40255c4cb49f2ae15a452c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1725719796}
+--- !u!114 &1725719795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c8adc20bfe94222a20e74d6d1ca0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceName: no-no-talesyntese-medium
+  speakerId: 0
+--- !u!114 &1725719796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1eb0f3a0f2b456882f6776aa6644e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Engine: {fileID: 1725719797}
+  Voice: {fileID: 1725719795}
+  source: {fileID: 1725719793}
+--- !u!114 &1725719797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04d0d7f3d8bb4a7caaa42f37f6c8b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1725719798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725719792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.155, y: 1.708, z: 0.007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1741491087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6356,3 +6542,4 @@ SceneRoots:
   - {fileID: 1163890066}
   - {fileID: 666648669}
   - {fileID: 476640645}
+  - {fileID: 1725719798}
