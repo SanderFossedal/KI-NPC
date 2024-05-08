@@ -13,6 +13,8 @@ namespace LLMUnitySamples
     public class ChatBotVoiceInput : MonoBehaviour
     {
         public TextMeshPro chatOutput;
+        public TextMeshProUGUI voiceTextTemp;
+        public TextMeshProUGUI debugLog;
         public LLMClient llm;
         public StartTTS tts;
 
@@ -33,6 +35,7 @@ namespace LLMUnitySamples
             }
 
             Debug.Log($"Processing voice input: {voiceText}");
+            voiceTextTemp.text = voiceText;
             SubmitTextToLLM(voiceText);
         }
 
@@ -60,17 +63,19 @@ namespace LLMUnitySamples
                 tts.ReceiveText(finalText); // Send the text to the TTS component
 
             Debug.Log($"{sender}:default text: {text}");
+            debugLog.text = "";
         }
 
         public void WarmUpCallback()
         {
             warmUpDone = true;
             Debug.Log("LLM client is ready for input.");
+            debugLog.text = "LLM client is ready for input.";
         }
 
         void Update()
         {
-            // This method remains available for additional logic if needed in the future.
+
         }
     }
 }

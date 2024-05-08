@@ -14,7 +14,7 @@ public class SimpleMicrophoneDemo : MonoBehaviour
     private void Awake()
     {
         // Set up event listeners
-        microphoneRecord.OnRecordStop += OnRecordStop;
+        microphoneRecord.OnRecordStop += ProcessAudioChunk;
 
     }
     private void Update()
@@ -36,7 +36,7 @@ public class SimpleMicrophoneDemo : MonoBehaviour
     }
 
 
-    private async void OnRecordStop(AudioChunk recordedAudio)
+    private async void ProcessAudioChunk(AudioChunk recordedAudio)
     {
         _buffer = "";
 

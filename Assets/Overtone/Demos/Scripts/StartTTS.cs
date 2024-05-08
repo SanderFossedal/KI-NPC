@@ -20,20 +20,20 @@ namespace LeastSquares.Overtone
 
         public void ReceiveText(string text)
         {
-            StartCoroutine(SpeakReceivedText(text));
+            StartCoroutine(CheckInputText(text));
             //Debug.Log($"StartTTS -> Received text: {text}");
         }
 
-        private IEnumerator SpeakReceivedText(string text)
+        private IEnumerator CheckInputText(string text)
         {
             if (!_player.Engine.Loaded || string.IsNullOrEmpty(text)) yield break;
 
             //inputText.text = text; // Optionally set this to visually show the text in a UI element
-            OnClicked(text); // Trigger the existing speech functionality
+            StartTTSProcess(text); // Trigger the existing speech functionality
             yield return null;
         }
 
-        private async void OnClicked(string inputText)
+        private async void StartTTSProcess(string inputText)
         {
             //var buttonText = GetComponentInChildren<TMP_Text>();
             // If the speech recognition engine is not loaded, do nothing.
