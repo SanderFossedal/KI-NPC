@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Samples/OpenAI Unity/0.2.0/ChatGPT/ChatGPT Freeroam.unity
     guid: bb7e4b8ab009efd4ab883110aa97bc86
   - enabled: 1
-    path: Assets/Samples/LLMUnity/1.1.1/ChatBot/Llama 2 3D.unity
+    path: Assets/Samples/LLMUnity/1.1.1/ChatBot/Demo.unity
     guid: f9b80280d35d2d146ac5b05735901fd6
   m_configObjects: {}
